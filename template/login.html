@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+<html>
+<body>
+
+<h2>HTML Forms</h2>
+{% block content %}
+
+<form action="." method="post" style="    padding-bottom: 100px;
+    padding-left: 100px;
+    padding-top: 100px;
+  ">
+  {% csrf_token %}
+  user name:<br>
+  <input type="text" name="username" value="Mickey">
+  <br>
+  password:<br>
+  <input type="password" name="password" value="password">
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+    {% for i in messages %}
+        <h style=" color: red;
+}">{{ i }}</h>
+    {% endfor %}
+{% endblock content %}
+
+</body>
+</html>
